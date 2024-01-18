@@ -10,7 +10,7 @@ fi
 
 export $(xargs <.env)
 
-cd "04-1-install-echo-certificate"
+cd "04-1-echo-certificate"
 helm dependency update
 helm upgrade -i init-echo-certificate . -f values.yaml -n echo --create-namespace
 cd ..
