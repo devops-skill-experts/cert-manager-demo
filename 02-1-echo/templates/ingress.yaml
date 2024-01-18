@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-echo
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "kaspa-chain.net"
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: "/"
+        backend:
+          service:
+            name: echo-service
+            port:
+              number: 80
