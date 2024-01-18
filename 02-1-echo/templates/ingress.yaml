@@ -4,6 +4,10 @@ metadata:
   name: ingress-echo
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+      - "kaspa-chain.net"
+      secretName: echo-cert
   rules:
   - host: "kaspa-chain.net"
     http:
